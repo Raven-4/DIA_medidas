@@ -1,3 +1,5 @@
+namespace medidas.Core;
+
 class Medidas
 {
     public double Peso { get; set; }
