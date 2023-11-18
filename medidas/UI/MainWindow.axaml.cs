@@ -13,7 +13,6 @@ namespace medidas.UI;
 
 public partial class MainWindow : Window
 {
-    //private List<Medidas> medidasMensuales = new List<Medidas>();
     private ContentControl contentControl;
 
     public MainWindow()
@@ -24,9 +23,11 @@ public partial class MainWindow : Window
 #endif
         contentControl = this.FindControl<ContentControl>("ContentControl");
 
-        var opMedidasButton = this.FindControl<Button>("AbrirMedidas");
+        var opMedidasButtonGuardar = this.FindControl<Button>("AbrirGuardarMedidas");
+        var opMedidasButtonGrafico = this.FindControl<Button>("AbrirGraficoMedidas");
 
-        opMedidasButton.Click += (_, _) => this.OnViewMedidas();
+        opMedidasButtonGuardar.Click += (_, _) => this.OnViewMedidasGuardar();
+        opMedidasButtonGrafico.Click += (_, _) => this.OnViewGraphicMedidas();
 
     }
 
@@ -36,9 +37,15 @@ public partial class MainWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
-    public void OnViewMedidas()
+    public void OnViewMedidasGuardar()
     {
         var medidasUserControl = new MedidasUserControl();
         contentControl.Content = medidasUserControl;
+    }
+
+    public void OnViewGraphicMedidas()
+    {
+        var graficoMedidas = new GraficoMedidasUserControl();
+        contentControl.Content = graficoMedidas;
     }
 }

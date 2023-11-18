@@ -6,7 +6,8 @@
         x:Class="medidas.UI.MainWindow"
         Title="medidas">
     <StackPanel>
-        <Button Name="AbrirMedidas" Content="Medidas" />
+        <Button Name="AbrirGuardarMedidas" Content="Introducir Medidas" />
+        <Button Name="AbrirGraficoMedidas" Content="Ver grafico Medidas" />
         <ContentControl Name="ContentControl"/>
     </StackPanel>
 </Window>

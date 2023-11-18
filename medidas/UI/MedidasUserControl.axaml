@@ -4,5 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="medidas.UI.MedidasUserControl">
-  Welcome to Avalonia!
+  <Grid>
+      <StackPanel>
+          <TextBlock Text="Introducir Medidas Mensuales"/>
+          <TextBlock Text="Peso:"/>
+          <TextBox Name="PesoTextBox"/>
+
+          <TextBlock Text="Circunferencia Abdominal:"/>
+          <TextBox Name="CircunferenciaTextBox"/>
+
+          <TextBlock Text="Notas:"/>
+          <TextBox Name="NotasTextBox"/>
+
+          <Button Name="GuardarButton" Content="Guardar"/>
+      </StackPanel>
+  </Grid>
 </UserControl>
