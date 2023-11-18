@@ -9,5 +9,22 @@ public partial class GraficoMedidasUserControl : UserControl
     public GraficoMedidasUserControl()
     {
         InitializeComponent();
+        
+        //Buscar como hacer grafico
+
+        CrearGrafico();
     }
+
+    void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+
+    private void CrearGrafico()
+    {
+        //Sacar medidas
+
+        //Meter medidas en grafico
+    }
+
 }
