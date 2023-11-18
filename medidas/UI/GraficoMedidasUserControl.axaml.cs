@@ -22,7 +22,7 @@ public partial class GraficoMedidasUserControl : UserControl
 
     private void CrearGrafico()
     {
-        //Sacar medidas
+        //Sacar medidas SUSO?
 
         //Meter medidas en grafico
     }
