@@ -13,8 +13,8 @@ namespace medidas.UI;
 
 public partial class MainWindow : Window
 {
-    private List<Medidas> medidasMensuales = new List<Medidas>();
-    //private TextBlock texto;
+    //private List<Medidas> medidasMensuales = new List<Medidas>();
+    private ContentControl contentControl;
 
     public MainWindow()
     {
@@ -22,6 +22,12 @@ public partial class MainWindow : Window
 #if DEBUG
         this.AttachDevTools();
 #endif
+        contentControl = this.FindControl<ContentControl>("ContentControl");
+
+        var opMedidasButton = this.FindControl<Button>("AbrirMedidas");
+
+        opMedidasButton.Click += (_, _) => this.OnViewMedidas();
+
     }
 
     void InitializeComponent()
@@ -30,30 +36,9 @@ public partial class MainWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
-    /*private void Boton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+    public void OnViewMedidas()
     {
-        // Pedir al usuario que ingrese las medidas
-        var peso = Convert.ToDouble(ShowInputDialog("Peso (kg):"));
-        var circunferenciaAbdominal = Convert.ToDouble(ShowInputDialog("Circunferencia abdominal (cm):"));
-        var notas = ShowInputDialog("Notas:");
-
-        // Crear un objeto Medidas y agregarlo a la lista
-        Medidas medidas = new Medidas(peso, circunferenciaAbdominal, notas);
-        medidasMensuales.Add(medidas);
-
-        // Mostrar las medidas registradas
-        MostrarMedidas();
+        var medidasUserControl = new MedidasUserControl();
+        contentControl.Content = medidasUserControl;
     }
-
-    private void MostrarMedidas()
-    {
-        texto.Text = "Evolución Mensual:\n";
-        texto.Text += "Mes\tPeso\tCircunferencia Abdominal\tNotas\n";
-
-        for (int i = 0; i < medidasMensuales.Count; i++)
-        {
-            Medidas medidas = medidasMensuales[i];
-            texto.Text += $"{i + 1}\t{medidas.Peso}\t{medidas.CircunferenciaAbdominal}\t\t\t{medidas.Notas}\n";
-        }
-    }*/
 }

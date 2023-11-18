@@ -5,5 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="medidas.UI.MainWindow"
         Title="medidas">
-    Welcome to Avalonia!
+    <StackPanel>
+        <Button Name="AbrirMedidas" Content="Medidas" />
+        <ContentControl Name="ContentControl"/>
+    </StackPanel>
 </Window>
