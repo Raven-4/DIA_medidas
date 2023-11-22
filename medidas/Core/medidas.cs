@@ -1,6 +1,6 @@
 namespace medidas.Core;
 
-class Medidas
+public class Medidas
 {
     public double Peso { get; set; }
     public double CircunferenciaAbdominal { get; set; }
@@ -11,6 +11,10 @@ class Medidas
         Peso = peso;
         CircunferenciaAbdominal = circunferenciaAbdominal;
         Notas = notas;
+    }
+
+    public Medidas(){
+
     }
 }
 

@@ -7,7 +7,7 @@ namespace medidas.Core;
 
 public class XmlMedidas
 {
-    public void MedidasToXml(double peso, double circunferencia, string notas)
+    public static void MedidasToXml(double peso, double circunferencia, string notas)
     {
         try
         {
@@ -31,7 +31,7 @@ public class XmlMedidas
         }
     }
 
-    private List<Medidas> XmlToMedidas()
+    private static List<Medidas> XmlToMedidas()
     {
         try
         {
