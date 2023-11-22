@@ -25,6 +25,10 @@ public partial class MedidasUserControl : UserControl
 
     public void GuardarMedidas()
     {
-       XmlMedidas.MedidasToXml();
+        double peso = Convert.ToDouble(pesoTextBox.Text);
+        double circunferencia = Convert.ToDouble(circunferenciaTextBox.Text);
+        string notas = Convert.ToDouble(notasTextBox.Text);
+
+        XmlMedidas.MedidasToXml(peso, circunferencia, notas);
     }
 }

@@ -7,31 +7,32 @@ namespace medidas.Core;
 
 public class XmlMedidas
 {
-   public void MedidasToXml()
+    public void MedidasToXml(double peso, double circunferencia, string notas)
     {
-        try{
-            double peso = Convert.ToDouble(pesoTextBox.Text);
-            double circunferencia = Convert.ToDouble(circunferenciaTextBox.Text);
-            string notas = Convert.ToDouble(notasTextBox.Text);
-
+        try
+        {
             Medidas nuevaMedida = new Medidas(peso, circunferencia, notas);
 
-            List<Medidas> listaMedidas = SacarMedidas();
+            List<Medidas> listaMedidas = XmlToMedidas();
 
             listaMedidas.Add(nuevaMedida);
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<Medidas>));
 
-            using (TextWriter writer = new StreamWriter("medidas.xml")){
+            using (TextWriter writer = new StreamWriter("medidas.xml"))
+            {
                 serializer.Serialize(writer, listaMedidas);
             }
 
-        }catch (Exception ex){
+        }
+        catch (Exception ex)
+        {
             Console.WriteLine($"Error al crear el archivo XML: {ex.Message}");
         }
     }
 
-   private List<Medidas> XmlToMedidas(){
+    private List<Medidas> XmlToMedidas()
+    {
         try
         {
             string rutaArchivoXml = "medidas.xml";
@@ -53,6 +54,5 @@ public class XmlMedidas
 
         return new List<Medidas>();
     }
-    }
 }
-}
+
