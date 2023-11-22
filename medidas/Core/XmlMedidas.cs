@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace medidas.Core;
 
-public class GuardarMedidas
+public class XmlMedidas
 {
    public void MedidasToXml()
     {
