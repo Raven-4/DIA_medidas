@@ -2,8 +2,10 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
+using medidas.Core;
 
 namespace medidas.UI;
 
@@ -33,12 +35,16 @@ public partial class MedidasUserControl : UserControl
             double circunferencia = Convert.ToDouble(circunferenciaTextBox.Text);
             string notas = Convert.ToDouble(notasTextBox.Text);
 
-            Medidas medidas = new Medidas(peso, circunferencia, notas);
+            Medidas nuevaMedida = new Medidas(peso, circunferencia, notas);
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Medidas));
+            //List<Medidas> listaMedidas = SacarMedidas();
+
+            listaMedidas.Add(nuevaMedida);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Medidas>));
 
             using (TextWriter writer = new StreamWriter("medidas.xml")){
-                serializer.Serialize(writer, medidas);
+                serializer.Serialize(writer, listaMedidas);
             }
 
             //Console.WriteLine("Medidas guardadas correctamente en el archivo medidas.xml.");
