@@ -1,6 +1,8 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using medidas.Core;
 
 namespace medidas.UI;
 
@@ -27,7 +29,7 @@ public partial class MedidasUserControl : UserControl
     {
         double peso = Convert.ToDouble(this.FindControl<TextBox>("PesoTextBox").Text);
         double circunferencia = Convert.ToDouble(this.FindControl<TextBox>("CircunferenciaTextBox").Text);
-        string notas = Convert.ToDouble(this.FindControl<TextBox>("NotasTextBox").Text);
+        string notas = Convert.ToString(this.FindControl<TextBox>("NotasTextBox").Text);
 
         XmlMedidas.MedidasToXml(peso, circunferencia, notas);
     }
