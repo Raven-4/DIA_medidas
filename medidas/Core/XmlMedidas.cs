@@ -24,6 +24,8 @@ public class XmlMedidas
                 serializer.Serialize(writer, listaMedidas);
             }
 
+            Console.WriteLine("Medida guardada correctamente en el archivo medidas.xml");
+
         }
         catch (Exception ex)
         {
