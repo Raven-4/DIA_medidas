@@ -18,13 +18,15 @@ public class XmlMedidas
             listaMedidas.Add(nuevaMedida);
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<Medidas>));
+            string rutaArchivoXml = "medidas.xml"; // Ruta relativa al directorio de ejecución
+
 
             using (TextWriter writer = new StreamWriter("medidas.xml"))
             {
                 serializer.Serialize(writer, listaMedidas);
             }
 
-            Console.WriteLine("Medida guardada correctamente en el archivo medidas.xml");
+            Console.WriteLine($"Archivo XML guardado en: {Path.GetFullPath(rutaArchivoXml)}");
 
         }
         catch (Exception ex)
@@ -33,7 +35,7 @@ public class XmlMedidas
         }
     }
 
-    private static List<Medidas> XmlToMedidas()
+    public static List<Medidas> XmlToMedidas()
     {
         try
         {

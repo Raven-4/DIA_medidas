@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMedidas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Medidas>
+    <Peso>1</Peso>
+    <CircunferenciaAbdominal>1</CircunferenciaAbdominal>
+    <Notas>1</Notas>
+  </Medidas>
+</ArrayOfMedidas>
