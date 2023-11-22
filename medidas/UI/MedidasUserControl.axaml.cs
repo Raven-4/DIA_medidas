@@ -25,6 +25,6 @@ public partial class MedidasUserControl : UserControl
 
     public void GuardarMedidas()
     {
-       
+       XmlMedidas.MedidasToXml();
     }
 }
