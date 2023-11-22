@@ -9,11 +9,11 @@ public class XmlMedidas
 {
     private static string rutaArchivoXml = "medidas.xml";
 
-    public static void MedidasToXml(double peso, double circunferencia, string notas)
+    public static void MedidasToXml(double peso, double circunferencia, string notas, DateTime fecha)
     {
         try
         {
-            Medidas nuevaMedida = new Medidas(peso, circunferencia, notas);
+            Medidas nuevaMedida = new Medidas(peso, circunferencia, notas, fecha);
 
             List<Medidas> listaMedidas = XmlToMedidas();
 

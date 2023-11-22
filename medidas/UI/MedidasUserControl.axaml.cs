@@ -12,9 +12,12 @@ public partial class MedidasUserControl : UserControl
     {
         InitializeComponent();
 
+        var fechaDatePicker = this.FindControl<DatePicker>("FechaDatePicker");
+
         var pesoTextBox = this.FindControl<TextBox>("PesoTextBox");
         var circunferenciaTextBox = this.FindControl<TextBox>("CircunferenciaTextBox");
         var notasTextBox = this.FindControl<TextBox>("NotasTextBox");
+
         var guardarButton = this.FindControl<Button>("GuardarButton");
 
         guardarButton.Click += (_, _) => this.GuardarMedidas();
@@ -30,7 +33,8 @@ public partial class MedidasUserControl : UserControl
         double peso = Convert.ToDouble(this.FindControl<TextBox>("PesoTextBox").Text);
         double circunferencia = Convert.ToDouble(this.FindControl<TextBox>("CircunferenciaTextBox").Text);
         string notas = Convert.ToString(this.FindControl<TextBox>("NotasTextBox").Text);
+        DateTime fecha = this.FindControl<DatePicker>("FechaDatePicker").SelectedDate.Value.DateTime;
 
-        XmlMedidas.MedidasToXml(peso, circunferencia, notas);
+        XmlMedidas.MedidasToXml(peso, circunferencia, notas, fecha);
     }
 }
