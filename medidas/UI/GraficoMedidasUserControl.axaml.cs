@@ -1,6 +1,11 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using medidas.Core;
 
 namespace medidas.UI;
 
