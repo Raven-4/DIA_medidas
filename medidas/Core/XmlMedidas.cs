@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using medidas.Core;
 
 namespace medidas.Core;
 
 public class GuardarMedidas
 {
-   public void GuardarMedidas()
+   public void MedidasToXml()
     {
         try{
             double peso = Convert.ToDouble(pesoTextBox.Text);
@@ -17,7 +16,7 @@ public class GuardarMedidas
 
             Medidas nuevaMedida = new Medidas(peso, circunferencia, notas);
 
-            //List<Medidas> listaMedidas = SacarMedidas();
+            List<Medidas> listaMedidas = SacarMedidas();
 
             listaMedidas.Add(nuevaMedida);
 
@@ -28,10 +27,11 @@ public class GuardarMedidas
             }
 
         }catch (Exception ex){
+            Console.WriteLine($"Error al crear el archivo XML: {ex.Message}");
         }
     }
 
-   private List<Medidas> SacarMedidas(){
+   private List<Medidas> XmlToMedidas(){
         try
         {
             string rutaArchivoXml = "medidas.xml";
