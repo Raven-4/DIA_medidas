@@ -9,10 +9,10 @@
             <DatePicker Name="FechaDatePicker"/>
             
             <TextBlock Text="Introducir Medidas"/>
-            <TextBlock Text="Peso:"/>
+            <TextBlock Text="Peso (Kg):"/>
             <TextBox Name="PesoTextBox"/>
 
-            <TextBlock Text="Circunferencia Abdominal:"/>
+            <TextBlock Text="Circunferencia Abdominal (cms.):"/>
             <TextBox Name="CircunferenciaTextBox"/>
 
             <TextBlock Text="Notas:"/>
