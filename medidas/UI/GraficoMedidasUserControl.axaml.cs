@@ -20,11 +20,13 @@ public partial class GraficoMedidasUserControl : UserControl
         AvaloniaXamlLoader.Load(this);
     }
 
+    private List<Medidas> SacarMedidas(){
+    
+    }
+    
     private void CrearGrafico()
     {
-        //Sacar medidas SUSO?
-
-        //Meter medidas en grafico
+       //Meter medidas en grafico
     }
 
 }
