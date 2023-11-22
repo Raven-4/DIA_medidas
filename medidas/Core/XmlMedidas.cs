@@ -7,6 +7,8 @@ namespace medidas.Core;
 
 public class XmlMedidas
 {
+    private static string rutaArchivoXml = "medidas.xml";
+
     public static void MedidasToXml(double peso, double circunferencia, string notas)
     {
         try
@@ -18,10 +20,8 @@ public class XmlMedidas
             listaMedidas.Add(nuevaMedida);
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<Medidas>));
-            string rutaArchivoXml = "medidas.xml"; // Ruta relativa al directorio de ejecución
 
-
-            using (TextWriter writer = new StreamWriter("medidas.xml"))
+            using (TextWriter writer = new StreamWriter(rutaArchivoXml))
             {
                 serializer.Serialize(writer, listaMedidas);
             }
@@ -39,8 +39,6 @@ public class XmlMedidas
     {
         try
         {
-            string rutaArchivoXml = "medidas.xml";
-
             if (File.Exists(rutaArchivoXml))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Medidas>));
