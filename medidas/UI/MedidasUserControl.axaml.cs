@@ -47,9 +47,7 @@ public partial class MedidasUserControl : UserControl
                 serializer.Serialize(writer, listaMedidas);
             }
 
-            //Console.WriteLine("Medidas guardadas correctamente en el archivo medidas.xml.");
         }catch (Exception ex){
-            //Console.WriteLine($"Error al guardar las medidas: {ex.Message}");
         }
     }
 }
